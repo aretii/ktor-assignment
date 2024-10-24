@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '2.0.20'
+    id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlin_version"
+}
+
+group "com.example"
+version "0.0.1"
+mainClassName = "com.example.ApplicationKt"
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation "ch.qos.logback:logback-classic:1.4.12"
+    implementation 'io.ktor:ktor-server-core-jvm:3.0.0'
+    implementation 'io.ktor:ktor-server-netty-jvm:3.0.0'
+    implementation group: 'org.ktorm', name: 'ktorm-core', version: '3.4.1'
+    implementation group: 'org.mindrot', name: 'jbcrypt', version: '0.4'
+    implementation 'io.ktor:ktor-serialization-kotlinx-json:3.0.0'
+    implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
+    implementation('mysql:mysql-connector-java:8.0.28')
+    implementation("io.ktor:ktor-server-html-builder:$ktor_version")
+    implementation("io.ktor:ktor-serialization-gson:$ktor_version")
+    implementation("io.ktor:ktor-server-auth:$ktor_version")
+    implementation("io.ktor:ktor-server-sessions:$ktor_version")
+
+}
